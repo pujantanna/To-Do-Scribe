@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+
+/* @media  {
+    
+} */
+
+body {
+
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #8b9dc2, #7299e7);
+    font-family: "Baloo 2", sans-serif;
+    box-sizing: border-box;
+}
+
+.box {
+
+    border-radius: 10px;
+    height: 100%;
+    padding-bottom: 10px;
+    max-width: 35vw;
+    width: 100%;
+    background: white;
+    margin: 5em 26em;
+}
+
+.box h2 {
+
+    color: #002765;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0 10px 20px;
+    padding-top: 20px;
+}
+
+.box h2 img {
+
+    width: 30px;
+}
+
+.task {
+
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e2dddd;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.task input {
+
+    width: 25em;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-radius: 20px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.task button {
+
+    border: none;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 15px;
+    border-radius: 30px;
+    background-color: rgb(150, 208, 92);
+    width: 15vw;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.box ul li {
+
+    list-style: none;
+    font-size: 15px;
+    padding: 12px 20px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.box ul li::before {
+
+    height: 20px;
+    content: '';
+    width: 20px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 1em;
+    right: 25em;
+}
+
+.box ul li.checked {
+
+    text-decoration: line-through;
+    color: rgb(58, 57, 57);
+}
+
+.box ul li.checked::before {
+
+    background-image: url(images/checked.png);
+}
+
+.box ul li span {
+    position: absolute;
+    left: 15em;
+    font-size: 1.4em;
+    color: rgb(162, 157, 157);
+    border-radius: 50%;
+    width: 1.5em;
+    text-align: center;
+}
+
+.box ul li span:hover {
+
+    /* background-color: rgb(237, 233, 233); */
+    color: rgb(77, 75, 75);
+}
+
+#clear_btn {
+
+    border: none;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 15px;
+    border-radius: 15px;
+    background-color: #4285F4;
+    width: 10vw;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 200;
+    margin-left: 19em;
+}
