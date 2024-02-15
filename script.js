@@ -3,6 +3,22 @@ let btn = document.querySelector("button")
 let clearall_btn = document.getElementById("clear_btn")
 const list_area = document.getElementById("list-area")
 
+let pending_txt = document.getElementById("counter")
+
+function task_counter() {
+
+    let c=0
+    for (let i = 0; i < list_area.childElementCount; i++) {
+        
+        if(list_area.children[i].className == "checked"){
+
+            c+=1
+        }
+    }
+
+    pending_txt.innerHTML = `You have ${list_area.childElementCount-c} tasks pending!`
+}
+
 clearall_btn.addEventListener("click", () => {
 
     if (list_area.innerHTML == '') {
@@ -12,7 +28,9 @@ clearall_btn.addEventListener("click", () => {
     else {
 
         list_area.innerHTML = ''
+        task_counter()
         saveNotes()
+        
     }
 
 })
@@ -36,6 +54,7 @@ txt_box.addEventListener("keydown", (e) => {
             li.appendChild(cross)
             list_area.appendChild(li)
             txt_box.value = ''
+            task_counter()
             saveNotes()
         }
     }
@@ -58,6 +77,7 @@ btn.addEventListener("click", () => {
         li.appendChild(cross)
         list_area.appendChild(li)
         txt_box.value = ''
+        task_counter()
         saveNotes()
     }
 })
@@ -67,11 +87,14 @@ list_area.addEventListener("click", (e) => {
     if (e.target.tagName == "LI") {
 
         e.target.classList.toggle("checked")
+        task_counter()
         saveNotes()
+        
     }
     else if (e.target.tagName == "SPAN") {
 
         e.target.parentElement.remove()
+        task_counter()
         saveNotes()
 
     }
@@ -88,3 +111,4 @@ function getNotes() {
 }
 
 getNotes()
+task_counter()
