@@ -7,16 +7,24 @@ let pending_txt = document.getElementById("counter")
 
 function task_counter() {
 
-    let c=0
+    
+    let c = 0
+    
     for (let i = 0; i < list_area.childElementCount; i++) {
-        
-        if(list_area.children[i].className == "checked"){
 
-            c+=1
+        if (list_area.children[i].className == "checked") {
+
+            c += 1
         }
     }
+    let cval = list_area.childElementCount-c
+    if (list_area.innerHTML == '' || cval==0) {
 
-    pending_txt.innerHTML = `You have ${list_area.childElementCount-c} tasks pending!`
+        pending_txt.innerHTML = `You have no tasks pending!`
+        return 0
+    }
+
+        pending_txt.innerHTML = `You have ${cval} tasks pending!`
 }
 
 clearall_btn.addEventListener("click", () => {
@@ -30,7 +38,7 @@ clearall_btn.addEventListener("click", () => {
         list_area.innerHTML = ''
         task_counter()
         saveNotes()
-        
+
     }
 
 })
@@ -89,7 +97,7 @@ list_area.addEventListener("click", (e) => {
         e.target.classList.toggle("checked")
         task_counter()
         saveNotes()
-        
+
     }
     else if (e.target.tagName == "SPAN") {
 
