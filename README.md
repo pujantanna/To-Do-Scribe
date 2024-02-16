@@ -33,6 +33,7 @@ You can view a live demo of the ToDo Scribe App [here](#).
 
 ![Screenshot 1](ss/1.png)
 ![Screenshot 2](ss/2.png)
+![Screenshot 2](ss/4.png)
 ![Screenshot 2](ss/3.png)
 
 ## Contributing
